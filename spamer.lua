@@ -6,6 +6,7 @@ local CustomTextBox = Instance.new("TextBox")
 local UICorner_2 = Instance.new("UICorner")
 local TextButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
+local CloseButton = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local spamToggle = false
 
@@ -18,6 +19,15 @@ CustomFrame.Position = UDim2.new(0.293939382, 0, 0.35603714, 0)
 CustomFrame.Size = UDim2.new(0, 300, 0, 200)
 CustomFrame.Active = true
 CustomFrame.Draggable = true
+
+CloseButton.Parent = CustomFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.Position = UDim2.new(0.925, 0, 0, 0)
+CloseButton.Size = UDim2.new(0, 20, 0, 20)
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 14.000
 
 CustomFrame_2.Parent = CustomFrame
 CustomFrame_2.BackgroundColor3 = Color3.fromRGB(135, 0, 211)
@@ -65,3 +75,6 @@ UICorner_3.Parent = TextButton
 
 UICorner_4.Parent = CustomFrame
 
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
