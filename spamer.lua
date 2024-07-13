@@ -21,12 +21,12 @@ CustomFrame.Active = true
 CustomFrame.Draggable = true
 
 CloseButton.Parent = CustomFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CloseButton.Position = UDim2.new(0.925, 0, 0, 0)
 CloseButton.Size = UDim2.new(0, 30, 0, 30)
 CloseButton.Font = Enum.Font.GothamBold
 CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CloseButton.TextSize = 14.000
 
 CustomFrame_2.Parent = CustomFrame
@@ -37,26 +37,26 @@ CustomFrame_2.Size = UDim2.new(0, 360, 0, 240)
 UICorner.Parent = CustomFrame_2
 
 CustomTextBox.Parent = CustomFrame_2
-CustomTextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CustomTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CustomTextBox.Position = UDim2.new(0.0538115874, 0, 0.112630695, 0)
 CustomTextBox.Size = UDim2.new(0, 320, 0, 120)
 CustomTextBox.Font = Enum.Font.GothamBold
-CustomTextBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+CustomTextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 CustomTextBox.PlaceholderText = "напиши какой-то символ, чтобы спамить"
 CustomTextBox.Text = ""
-CustomTextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+CustomTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 CustomTextBox.TextSize = 18.000
 CustomTextBox.TextWrapped = true
 
 UICorner_2.Parent = CustomTextBox
 
 TextButton.Parent = CustomFrame_2
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.Position = UDim2.new(0.0538115874, 0, 0.579365075, 0)
 TextButton.Size = UDim2.new(0, 320, 0, 80)
 TextButton.Font = Enum.Font.GothamBold
 TextButton.Text = "жми что бы начался пиздец"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 20.000
 local function spamChat()
     while spamToggle do
