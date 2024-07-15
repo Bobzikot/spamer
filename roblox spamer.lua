@@ -1,48 +1,80 @@
 local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextBox = Instance.new("TextBox")
-local Button = Instance.new("TextButton")
+local CustomFrame = Instance.new("Frame")
+local CustomFrame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local CustomTextBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local CloseButton = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
 local spamToggle = false
 
 ScreenGui.Parent = game.CoreGui
 
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.Position = UDim2.new(0.3, 0, 0.35, 0)
-Frame.Size = UDim2.new(0, 400, 0, 300)
-Frame.Active = true
-Frame.Draggable = true
+CustomFrame.Parent = ScreenGui
+CustomFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CustomFrame.Position = UDim2.new(0.293939382, 0, 0.35603714, 0)
+CustomFrame.Size = UDim2.new(0, 400, 0, 300)
+CustomFrame.Active = true
+CustomFrame.Draggable = true
 
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.Position = UDim2.new(0.05, 0, 0.15, 0)
-TextBox.Size = UDim2.new(0.9, 0, 0.4, 0)
-TextBox.Font = Enum.Font.GothamBold
-TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.PlaceholderText = "Введи сообщение"
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.TextSize = 18
+CloseButton.Parent = CustomFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Position = UDim2.new(0.925, 0, 0, 0)
+CloseButton.Size = UDim2.new(0, 20, 0, 15)
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 14.000
 
-Button.Parent = Frame
-Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Button.Position = UDim2.new(0.05, 0, 0.65, 0)
-Button.Size = UDim2.new(0.9, 0, 0.25, 0)
-Button.Font = Enum.Font.GothamBold
-Button.Text = "Кликни что бы начать спамить"
-Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button.TextSize = 20
+CustomFrame_2.Parent = CustomFrame
+CustomFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CustomFrame_2.Position = UDim2.new(0.0358744413, 0, 0.0496453904, 0)
+CustomFrame_2.Size = UDim2.new(0, 360, 0, 240)
+
+UICorner.Parent = CustomFrame_2
+
+CustomTextBox.Parent = CustomFrame_2
+CustomTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CustomTextBox.Position = UDim2.new(0.0538115874, 0, 0.112630695, 0)
+CustomTextBox.Size = UDim2.new(0, 320, 0, 120)
+CustomTextBox.Font = Enum.Font.GothamBold
+CustomTextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+CustomTextBox.PlaceholderText = "напиши сообщение для спама или символ"
+CustomTextBox.Text = ""
+CustomTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CustomTextBox.TextSize = 18.000
+CustomTextBox.TextWrapped = true
+
+UICorner_2.Parent = CustomTextBox
+
+TextButton.Parent = CustomFrame_2
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.Position = UDim2.new(0.0538115874, 0, 0.579365075, 0)
+TextButton.Size = UDim2.new(0, 320, 0, 80)
+TextButton.Font = Enum.Font.GothamBold
+TextButton.Text = "кликай что бы запустить спам"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 20.000
 
 local function spamChat()
     while spamToggle do
-        wait(0.1)
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TextBox.Text, "All")
+wait(0.1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer((CustomTextBox.Text), "All")
     end
 end
 
-Button.MouseButton1Down:Connect(function()
-    spamToggle = not spamToggle
+TextButton.MouseButton1Down:Connect(function()
+spamToggle = not spamToggle
     if spamToggle then
-        spamChat()
+spamChat()
     end
+end)
+
+UICorner_3.Parent = TextButton
+UICorner_4.Parent = CustomFrame
+
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
 end)
