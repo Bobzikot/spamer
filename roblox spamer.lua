@@ -76,5 +76,5 @@ UICorner_3.Parent = TextButton
 UICorner_4.Parent = CustomFrame
 
 CloseButton.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
+ScreenGui:Destroy()
 end)
