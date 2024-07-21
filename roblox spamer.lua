@@ -64,14 +64,12 @@ wait(0.1)
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer((CustomTextBox.Text), "All")
     end
 end
-
 TextButton.MouseButton1Down:Connect(function()
 spamToggle = not spamToggle
 if spamToggle then
 spamChat()
     end
 end)
-
 UICorner_3.Parent = TextButton
 UICorner_4.Parent = CustomFrame
 
