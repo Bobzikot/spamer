@@ -59,7 +59,7 @@ TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 20.000
 
 local function spamChat()
-    while spamToggle do
+while spamToggle do
 wait(0.1)
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer((CustomTextBox.Text), "All")
     end
@@ -67,7 +67,7 @@ end
 
 TextButton.MouseButton1Down:Connect(function()
 spamToggle = not spamToggle
-    if spamToggle then
+if spamToggle then
 spamChat()
     end
 end)
